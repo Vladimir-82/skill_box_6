@@ -45,15 +45,17 @@
 
 # TODO здесь ваш код...
 
-from engine import make_a_number, chek_number, game_over
+from engine import make_a_number, chek_number, game_over, get_info
 
 
 while True:
     num = make_a_number()
     while True:
-        you_number = int(input('Enter your number:'))
+        you_number = input('Введите Ваше число!')
+        current_number = get_info(comp_number=num, your_number=you_number)
         chek_number(comp_number=num, your_number=you_number)
-        game_over()
+        if '*' not in current_number:
+            game_over()
     game = input('Сиграем еще?')
     if game == 'No':
         print('Good Buy!')
