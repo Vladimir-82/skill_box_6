@@ -57,7 +57,7 @@ while True:
         if '*' not in current_number:
             game_over()
             break
-    game = input('Сиграем еще?')
-    if game == 'No':
+    game = input('Сиграем еще?').lower()
+    if game == 'no' or game == 'n':
         print('Good Buy!')
         break
