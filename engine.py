@@ -14,8 +14,7 @@ def get_info(comp_number, your_number):
     for i in range(4):
         if comp_number[i] == your_number[i]:
             current_number = current_number[:i:] + comp_number[i] + current_number[i+1::]
-            #print('Быков', )
-
+    print(current_number)
     return current_number
 
 def chek_number(comp_number, your_number):
@@ -27,12 +26,10 @@ def chek_number(comp_number, your_number):
     for i in your_number:
         if i in comp_number:
             count_bull += 1
-    return 'коров:', count_cow, 'быков', count_bull - count_cow
-
-                
+    print('коров:', count_cow, 'быков', count_bull - count_cow)
 
 
 def game_over():
-    pass
+    print('Вы отгадали число!')
 
-print(chek_number('1978', '1237'))
+
