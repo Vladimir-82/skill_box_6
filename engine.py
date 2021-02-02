@@ -2,7 +2,7 @@ from random import randint
 _comp_number=''
 
 def make_a_number():
-    global  _comp_number
+    global _comp_number
     while len(_comp_number) < 4:
         i = str(randint(1, 9))
         if i not in _comp_number:
@@ -14,14 +14,25 @@ def get_info(comp_number, your_number):
     for i in range(4):
         if comp_number[i] == your_number[i]:
             current_number = current_number[:i:] + comp_number[i] + current_number[i+1::]
-    return comp_number
+            #print('Быков', )
+
+    return current_number
 
 def chek_number(comp_number, your_number):
-    pass
+    count_cow = 0
+    count_bull = 0
+    for i in range(4):
+        if your_number[i] == comp_number[i]:
+            count_cow += 1
+    for i in your_number:
+        if i in comp_number:
+            count_bull += 1
+    return 'коров:', count_cow, 'быков', count_bull - count_cow
+
                 
 
 
 def game_over():
     pass
 
-get_info('1234', '1237')
+print(chek_number('1978', '1237'))
